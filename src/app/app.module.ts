@@ -10,10 +10,13 @@ import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.com
 import { TodoDataService } from './todo-data.service';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { ApiService } from './api.service';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroService } from './hero.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeroesComponent,
     TodoListComponent,
     TodoListFooterComponent,
     TodoListHeaderComponent,
@@ -24,7 +27,7 @@ import { ApiService } from './api.service';
     FormsModule,
     HttpModule
   ],
-  providers: [TodoDataService, ApiService],
+  providers: [TodoDataService, ApiService, HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
