@@ -26,7 +26,7 @@ body {
 	background: #f5f5f5;
 	color: #4d4d4d;
 	min-width: 230px;
-	max-width: 550px;
+	max-width: 1450px;
 	margin: 0 auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -243,7 +243,7 @@ label[for='toggle-all'] {
 .footer {
 	color: #777;
 	padding: 10px 15px;
-	height: 20px;
+	height: 40px;
 	text-align: center;
 	border-top: 1px solid #e6e6e6;
 }

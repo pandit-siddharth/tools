@@ -2,17 +2,17 @@
   "todos": [
     {
       "id": 1,
-      "title": "Read article",
+      "title": "Jenkins",
       "complete": false
     },
     {
       "id": 2,
-      "title": "Clean inbox",
+      "title": "SOAPUI",
       "complete": false
     },
     {
       "id": 3,
-      "title": "Make restaurant reservation",
+      "title": "Docker",
       "complete": false
     }
   ]

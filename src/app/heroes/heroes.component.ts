@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
-import { HEROES } from '../mock-heroes';
+import { Todo } from '../Todo';
 import { HeroService } from '../hero.service';
+import { TodoDataService } from '.././todo-data.service';
 
 @Component({
   selector: 'app-heroes',
@@ -10,21 +11,28 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor(private heroService: HeroService) { }
-  // heroes = HEROES;
-  heroes: Hero[];
+  // heroes: Hero[];
+  todos: Todo[] = [];
   selectedHero: Hero;
 
+  constructor(private todoDataService: TodoDataService) { }
+
   getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+    this.todoDataService
+      .getAllTodos()
+      .subscribe(
+        (todos) => {
+          this.todos = todos;
+        }
+      );
+    // this.heroService.getHeroes()
+    //   .subscribe(heroes => this.heroes = heroes);
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
   ngOnInit() {
-    // alert('hi');
     this.getHeroes();
   }
 
