@@ -13,6 +13,7 @@ export class HeroesComponent implements OnInit {
 
   // heroes: Hero[];
   todos: Todo[] = [];
+  todos1: Todo[] = [];
   selectedHero: Hero;
 
   constructor(private todoDataService: TodoDataService) { }
@@ -23,6 +24,15 @@ export class HeroesComponent implements OnInit {
       .subscribe(
         (todos) => {
           this.todos = todos;
+        }
+      );
+
+      this.todoDataService
+      .getNodeTodos()
+      .subscribe(
+        (todos1) => {
+          //this.todos1 = todos1;
+          //console.log(todos1);
         }
       );
     // this.heroService.getHeroes()

@@ -22,6 +22,7 @@ export class ApiService {
       .get(API_URL + '/todos')
       .map(response => {
         const todos = response.json();
+        //console.log(todos);
         return todos.map((todo) => new Todo(todo));
       })
       .catch(this.handleError);
@@ -58,6 +59,17 @@ export class ApiService {
     return this.http
       .delete(API_URL + '/todos/' + todoId)
       .map(response => null)
+      .catch(this.handleError);
+  }
+
+   public getNodeTodos(): Observable<Todo[]> {
+    return this.http
+      .get('http://localhost:3333/notes')
+      .map(response => {
+        const todos = response.json();
+        //console.log(todos.todos);
+        return todos.todos.map((todo) => new Todo(todo));
+      })
       .catch(this.handleError);
   }
 

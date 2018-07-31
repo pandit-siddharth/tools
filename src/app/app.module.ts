@@ -14,6 +14,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroService } from './hero.service';
 import { AppRoutingModule } from './app-routing.module';
 import { ToolsComponent } from './tools/tools.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToolsComponent } from './tools/tools.component';
     TodoListFooterComponent,
     TodoListHeaderComponent,
     TodoListItemComponent,
-    ToolsComponent
+    ToolsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
