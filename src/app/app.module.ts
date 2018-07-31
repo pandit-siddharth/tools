@@ -12,6 +12,8 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
 import { ApiService } from './api.service';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroService } from './hero.service';
+import { AppRoutingModule } from './app-routing.module';
+import { ToolsComponent } from './tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { HeroService } from './hero.service';
     TodoListComponent,
     TodoListFooterComponent,
     TodoListHeaderComponent,
-    TodoListItemComponent
+    TodoListItemComponent,
+    ToolsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [TodoDataService, ApiService, HeroService],
   bootstrap: [AppComponent]
