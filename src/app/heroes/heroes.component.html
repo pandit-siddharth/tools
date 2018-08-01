@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<!-- div class="jumbotron">
   <div class="container text-center">
     <h1>Table of DevOPs tools</h1>      
   </div>
@@ -7,34 +7,33 @@
 <div class="container-fluid bg-3 text-center" >    
   <h3>Click on a tool to see the details..</h3><br>
   <div class="row">
-    <div class="col-sm-3" *ngFor="let hero of todos"
+    <div class="col-sm-1" *ngFor="let hero of todos"
     [class.selected]="hero === selectedHero"
     (click)="onSelect(hero)">
       <p>{{hero.id}}</p>
       <img src="https://placehold.it/150x80?text={{hero.title}}" class="img-responsive" style="width:100%" alt="Image">
     </div>
   </div>
-</div><br>
+</div>
+<br> -->
 
-<!-- <div class="container-fluid bg-3 text-center" >    
-  <h3>Click on a tool to see the details..</h3><br>
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let hero of todos1">
-      <p>{{hero.id}}</p>
-      <img src="https://placehold.it/150x80?text={{hero.title}}" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div><br> -->
+<div class="legend">
+    <ul class="list-1">
+      <li *ngFor="let hero of todos2" [ngClass]="'cat-' + hero.categoryId"><span>C</span>{{hero.categoryName}}</li>
+    </ul>
+    
+    <ul class="list-2">
+      <li *ngFor="let hero of todos1" [ngClass]="'type-' + hero.type">{{hero.typeDescription}}</li>
+    </ul>
+</div>
 
-<!--
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li>
-</ul>
--->
+<div class="wrapper">      
+    <ul class="main">      
+      <li *ngFor="let hero of todos" data-pos="37" data-nb="85.468" [ngClass]="'cat-' + hero.categoryId + ' type-' + hero.type">Rb<span>{{hero.title}}</span></li>
+    </ul>
+    
+</div>
+  
 
 <div class="container-fluid" *ngIf="selectedHero">
 

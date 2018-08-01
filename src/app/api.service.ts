@@ -62,18 +62,18 @@ export class ApiService {
       .catch(this.handleError);
   }
 
-   public getNodeTodos(): Observable<Todo[]> {
-    return this.http
-      .get('http://localhost:3333/notes')
-      .map(response => {
-        const todos = response.json();
-        //console.log(todos.todos);
-        return todos.todos.map((todo) => new Todo(todo));
-      })
-      .catch(this.handleError);
-  }
+  //  public getNodeTodos(): Observable<Todo[]> {
+  //   return this.http
+  //     .get('http://localhost:3333/notes')
+  //     .map(response => {
+  //       const todos = response.json();
+  //       //console.log(todos.todos);
+  //       return todos.todos.map((todo) => new Todo(todo));
+  //     })
+  //     .catch(this.handleError);
+  // }
 
-  private handleError (error: Response | any) {
+  private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
   }
