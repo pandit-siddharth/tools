@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { Hero } from '../hero';
 import { Todo } from '../Todo';
 import { TodoDataService } from '.././todo-data.service';
@@ -9,7 +9,7 @@ declare var $: any;
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit, AfterContentChecked {
+export class HeroesComponent implements OnInit, AfterContentInit {
 
   todos: Todo[] = [];
   typeArr = [];
@@ -87,7 +87,7 @@ export class HeroesComponent implements OnInit, AfterContentChecked {
     this.getHeroes();
   }
 
-  ngAfterContentChecked() {
+  ngAfterContentInit() {
     this.onPageLoad();
   }
 }
