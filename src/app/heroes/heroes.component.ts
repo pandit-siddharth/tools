@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { Hero } from '../hero';
 import { Todo } from '../Todo';
 import { TodoDataService } from '.././todo-data.service';
@@ -9,12 +9,11 @@ declare var $: any;
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, AfterContentChecked {
 
-  // heroes: Hero[];
   todos: Todo[] = [];
-  todos1 = [];
-  todos2 = [];
+  typeArr = [];
+  categoryArr = [];
   selectedHero: Hero;
 
   constructor(private todoDataService: TodoDataService) { }
@@ -25,49 +24,28 @@ export class HeroesComponent implements OnInit {
       .subscribe(
         (todos) => {
           this.todos = todos;
-          const typeArr = [];
-          const typeDisp = [];
-          let largeArr = [];
-          largeArr = todos;
-          largeArr.forEach(elem => {
-            // typeArr.forEach(arr => {
-            // debugger;
-            if (!typeArr.includes(elem.typeDescription)) {
-              typeArr.push(elem.typeDescription);
-              typeDisp.push({ type: elem.type, typeDescription: elem.typeDescription });
-            }
-            // });
-          });
-          this.todos1 = typeDisp;
+          const initialArr = todos as any;
+          const uniqueArrayofTypeElem = [];
+          const uniqueArrayofTypeObj = [];
+          const uniqueArrayofCatElem = [];
+          const uniqueArrayofCatObj = [];
 
-
-          const catArr = [];
-          const catDisp = [];
-          let largeArr2 = [];
-          largeArr2 = todos;
-          largeArr2.forEach(elem => {
-            // catArr.forEach(arr => {
-            // debugger;
-            if (!catArr.includes(elem.categoryName)) {
-              catArr.push(elem.categoryName);
-              catDisp.push({ categoryId: elem.categoryId, categoryName: elem.categoryName });
+          initialArr.forEach(elem => {
+            if (!uniqueArrayofTypeElem.includes(elem.typeDescription)) {
+              uniqueArrayofTypeElem.push(elem.typeDescription);
+              uniqueArrayofTypeObj.push({ type: elem.type, typeDescription: elem.typeDescription });
             }
-            // });
+
+            if (!uniqueArrayofCatElem.includes(elem.categoryName)) {
+              uniqueArrayofCatElem.push(elem.categoryName);
+              uniqueArrayofCatObj.push({ categoryId: elem.categoryId, categoryName: elem.categoryName });
+            }
+
           });
-          this.todos2 = catDisp;
+          this.typeArr = uniqueArrayofTypeObj;
+          this.categoryArr = uniqueArrayofCatObj;
         }
       );
-
-    // this.todoDataService
-    // .getNodeTodos()
-    // .subscribe(
-    //   (todos1) => {
-    //     //this.todos1 = todos1;
-    //     //console.log(todos1);
-    //   }
-    // );
-    // this.heroService.getHeroes()
-    //   .subscribe(heroes => this.heroes = heroes);
   }
 
   onSelect(hero: Hero): void {
@@ -107,7 +85,9 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     this.getHeroes();
-    this.onPageLoad();
   }
 
+  ngAfterContentChecked() {
+    this.onPageLoad();
+  }
 }

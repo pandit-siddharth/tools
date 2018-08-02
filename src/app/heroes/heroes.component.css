@@ -131,7 +131,10 @@ body {
   width:200px;
 }
 
-.legend .list-1 li { margin:7px 0; }
+.legend .list-1 li { 
+  margin:7px 0; 
+  cursor: pointer;
+}
 .legend .list-1 li:first-of-type { margin-top: 2px; }
 
 .legend .list-1 span {

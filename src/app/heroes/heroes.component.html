@@ -19,11 +19,11 @@
 
 <div class="legend">
     <ul class="list-1">
-      <li *ngFor="let hero of todos2" [ngClass]="'cat-' + hero.categoryId"><span>C</span>{{hero.categoryName}}</li>
+      <li *ngFor="let hero of categoryArr" [ngClass]="'cat-' + hero.categoryId"><span>C</span>{{hero.categoryName}}</li>
     </ul>
     
     <ul class="list-2">
-      <li *ngFor="let hero of todos1" [ngClass]="'type-' + hero.type">{{hero.typeDescription}}</li>
+      <li *ngFor="let hero of typeArr" [ngClass]="'type-' + hero.type">{{hero.typeDescription}}</li>
     </ul>
 </div>
 
