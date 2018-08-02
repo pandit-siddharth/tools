@@ -20,9 +20,11 @@ export class HeroesComponent implements OnInit, AfterContentChecked {
 
   getHeroes(): void {
     this.todoDataService
-      .getAllTodos()
+      //.getAllTodos()
+      .getNodeTodos()
       .subscribe(
         (todos) => {
+          console.log(todos);
           this.todos = todos;
           const initialArr = todos as any;
           const uniqueArrayofTypeElem = [];
