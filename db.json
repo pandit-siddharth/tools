@@ -1,40 +1,40 @@
 {
   "todos": [
     {
+      "title": "GitHub",
+      "complete": false,
       "id": 4,
       "type": "5",
       "typeDescription": "Source Control Management",
       "categoryId": "3",
-      "categoryName": "Freemium",
-      "title": "GitHub",
-      "complete": false
+      "categoryName": "Freemium"
     },
     {
+      "title": "Subversion",
+      "complete": false,
       "id": 5,
       "type": "5",
       "typeDescription": "Source Control Management",
       "categoryId": "1",
-      "categoryName": "Open Source",
-      "title": "Subversion",
-      "complete": false
+      "categoryName": "Open Source"
     },
     {
+      "title": "BitBucket",
+      "complete": false,
       "id": 6,
       "type": "5",
       "typeDescription": "Source Control Management",
       "categoryId": "3",
-      "categoryName": "Freemium",
-      "title": "BitBucket",
-      "complete": false
+      "categoryName": "Freemium"
     },
     {
+      "title": "Nexus",
+      "complete": false,
       "id": 7,
       "type": "5",
       "typeDescription": "Source Control Management",
       "categoryId": "1",
-      "categoryName": "Open Source",
-      "title": "Nexus",
-      "complete": false
+      "categoryName": "Open Source"
     },
     {
       "id": 8,

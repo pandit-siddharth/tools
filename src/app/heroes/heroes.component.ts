@@ -88,6 +88,8 @@ export class HeroesComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    this.onPageLoad();
+    setTimeout(() => {
+      this.onPageLoad();
+    }, 500);
   }
 }

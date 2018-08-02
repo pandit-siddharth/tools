@@ -1,11 +1,3 @@
-* { box-sizing: border-box; padding:0; margin:0; }
-
-body {
-  background:linear-gradient(#dbeaf8, #dbeaf8);
-  color:#222;
-	padding: 20px;
-  font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-}
 
 .wrapper {
  	width:1050px;
@@ -21,12 +13,12 @@ body {
 }
  
 .main li {
- 	width:56px;
-  height:60px;
+ 	width:80px;
+  height:80px;
   border:1px solid rgba(0,0,0,0.3);
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);
   position:relative;
-  font-size:18px;
+  font-size:14px;
   float:left;
   padding:0 2px;
   margin:1px;
@@ -99,9 +91,9 @@ body {
 .cat-0 { color:#222; }
 .cat-1 { color:#0000dc; }
 .cat-2 { color:#b10601; }
-.cat-3 { color:#3bd93b; }
-.cat-4 { color:#F8B707; }
-.cat-5 { color:#dd9999; }
+.cat-3 { color:#7b0939; }
+.cat-4 { color:rgb(3, 37, 4); }
+.cat-5 { color:#b50da4; }
 
 .legend {
  	position:absolute;

@@ -19,9 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/css/todomvc-common.css",
         "assets/css/todomvc-app.css",
-        "styles.css"
+        "assets/css/Header-Nightsky.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js"

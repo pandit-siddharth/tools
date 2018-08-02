@@ -18,27 +18,31 @@
 <br> -->
 
 <div class="legend">
-    <ul class="list-1">
-      <li *ngFor="let hero of categoryArr" [ngClass]="'cat-' + hero.categoryId"><span>C</span>{{hero.categoryName}}</li>
-    </ul>
-    
-    <ul class="list-2">
-      <li *ngFor="let hero of typeArr" [ngClass]="'type-' + hero.type">{{hero.typeDescription}}</li>
-    </ul>
+  <ul class="list-1">
+    <li *ngFor="let hero of categoryArr" ngClass="cat-{{hero.categoryId}}">
+      <span>C</span>{{hero.categoryName}}</li>
+  </ul>
+
+  <ul class="list-2">
+    <li *ngFor="let hero of typeArr" ngClass="type-{{hero.type}}">{{hero.typeDescription}}</li>
+  </ul>
 </div>
 
-<div class="wrapper">      
-    <ul class="main">      
-      <li *ngFor="let hero of todos" data-pos="37" data-nb="85.468" [ngClass]="'cat-' + hero.categoryId + ' type-' + hero.type">Rb<span>{{hero.title}}</span></li>
-    </ul>
-    
+<div class="wrapper">
+  <ul class="main">
+    <li *ngFor="let hero of todos" data-pos="37" attr.data-nb="{{hero.categoryName}}" ngClass="cat-{{hero.categoryId}} type-{{hero.type}}">{{hero.title}}
+      <span>Space for Sample Description</span>
+    </li>
+  </ul>
+
 </div>
-  
+
 
 <div class="container-fluid" *ngIf="selectedHero">
 
   <h2>{{selectedHero.title | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <span>id: </span>{{selectedHero.id}}</div>
   <div>
     <label>title:
       <input [(ngModel)]="selectedHero.title" placeholder="title">
@@ -46,4 +50,3 @@
   </div>
 
 </div>
-
