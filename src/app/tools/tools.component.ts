@@ -22,6 +22,7 @@ import { Todo } from '../todo';
 export class ToolsComponent implements OnInit {
 
   todos: Todo[] = [];
+  addNewTool={}
 
   constructor(
     private todoDataService: TodoDataService
@@ -38,22 +39,29 @@ export class ToolsComponent implements OnInit {
       );
   }
 
-  onAddTodo(todo) {
-    this.todoDataService
-      .addTodo(todo)
-      .subscribe(
-        (newTodo) => {
-          this.todos = this.todos.concat(newTodo);
-        }
-      );
+  onTypeChange(value,id) {
+    console.log(value,id);
+    this.addNewTool = Object.assign(this.addNewTool,{typeValue:value, typeId: id});
+    console.log(this.addNewTool);
+  
   }
 
-  onToggleTodoComplete(todo) {
-    this.todoDataService
-      .toggleTodoComplete(todo)
+  onCategoryChange(value,id) {
+    this.addNewTool = Object.assign(this.addNewTool,{categoryValue:value, categoryId: id});
+  }
+
+  onKey(value){
+    this.addNewTool = Object.assign(this.addNewTool,{title:value,"complete": false});
+  }
+
+  onSubmit(){
+    console.log('here');
+      this.todoDataService
+      .addTodo(this.addNewTool)
       .subscribe(
-        (updatedTodo) => {
-          todo = updatedTodo;
+        (newTodo) => {
+          console.log(newTodo);
+          //this.todos = this.todos.concat(newTodo);
         }
       );
   }
