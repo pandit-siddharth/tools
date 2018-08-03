@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers, URLSearchParams } from '@angular/http';
 import { Todo } from './todo';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -8,7 +8,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 const API_URL = environment.apiUrl;
-
+//const myUrl = environment.myUrl;
+let body = new URLSearchParams();
 @Injectable()
 export class ApiService {
 
@@ -27,11 +28,20 @@ export class ApiService {
       .catch(this.handleError);
   }
 
-  public createTodo(todo: Todo): Observable<Todo> {
+  public createTodo(todo): Observable<Todo> {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let options = new RequestOptions({ headers: headers });
+    body.set('typeValue', todo.typeValue);
+    body.set('typeId', todo.typeId);
+    body.set('categoryValue', todo.categoryValue);
+    body.set('categoryId', todo.categoryId);
+    body.set('title', todo.title);
+    body.set('complete', todo.complete);
+
     return this.http
-      .post(API_URL + '/tools', todo)
+      .post('http://localhost:3333/create', body, options)
       .map(response => {
-        return new Todo(response.json());
+        return new Todo(response);
       })
       .catch(this.handleError);
   }

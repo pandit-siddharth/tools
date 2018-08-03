@@ -12,7 +12,7 @@ export class TodoDataService {
   }
 
   // Simulate POST /todos
-  addTodo(todo: Todo): Observable<Todo> {
+  addTodo(todo): Observable<Todo> {
     return this.api.createTodo(todo);
   }
 
