@@ -20,8 +20,7 @@ export class HeroesComponent implements OnInit, AfterContentInit {
 
   getHeroes(): void {
     this.todoDataService
-      //.getAllTodos()
-      .getNodeTodos()
+      .getAllTodos()
       .subscribe(
         (todos) => {
           console.log(todos);

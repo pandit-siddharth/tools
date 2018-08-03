@@ -31,11 +31,6 @@ export class TodoDataService {
     return this.api.getAllTodos();
   }
 
-  // Simulate GET /todos
-  getNodeTodos(): Observable<Todo[]> {
-    return this.api.getNodeTodos();
-  }
-
   // Simulate GET /todos/:id
   getTodoById(todoId: number): Observable<Todo> {
     return this.api.getTodoById(todoId);
