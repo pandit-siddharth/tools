@@ -1,48 +1,57 @@
 {
   "todos": [
     {
-      "title": "GitHub",
-      "complete": false,
-      "id": 4,
+      "id": 21,
       "type": "5",
-      "typeDescription": "Source Control Management",
+      "typeDescription": "Deployment",
       "categoryId": "3",
-      "categoryName": "Freemium"
+      "categoryName": "Freemium",
+      "title": "AWS Code Deploy",
+      "complete": false
     },
     {
-      "title": "Subversion",
-      "complete": false,
-      "id": 5,
-      "type": "5",
+      "id": 8,
+      "type": "1",
       "typeDescription": "Source Control Management",
       "categoryId": "1",
-      "categoryName": "Open Source"
+      "categoryName": "Open Source",
+      "title": "Artifactory",
+      "complete": false
+    },
+    {
+      "id": 15,
+      "type": "4",
+      "typeDescription": "Configuration",
+      "categoryId": "5",
+      "categoryName": "Enterprise",
+      "title": "Chef",
+      "complete": false
+    },
+    {
+      "id": 13,
+      "type": "3",
+      "typeDescription": "Testing",
+      "categoryId": "2",
+      "categoryName": "Free",
+      "title": "JMeter",
+      "complete": false
     },
     {
       "title": "BitBucket",
       "complete": false,
       "id": 6,
-      "type": "5",
+      "type": "1",
       "typeDescription": "Source Control Management",
       "categoryId": "3",
       "categoryName": "Freemium"
     },
     {
-      "title": "Nexus",
-      "complete": false,
-      "id": 7,
-      "type": "5",
-      "typeDescription": "Source Control Management",
-      "categoryId": "1",
-      "categoryName": "Open Source"
-    },
-    {
-      "id": 8,
-      "type": "5",
-      "typeDescription": "Source Control Management",
-      "categoryId": "1",
-      "categoryName": "Open Source",
-      "title": "Artifactory",
+      "id": 11,
+      "type": "3",
+      "typeDescription": "Testing",
+      "categoryId": "2",
+      "categoryName": "Free",
+      "title": "Karma",
       "complete": false
     },
     {
@@ -55,22 +64,22 @@
       "complete": false
     },
     {
-      "id": 2,
-      "type": "2",
-      "typeDescription": "Continous Integration",
-      "categoryId": "4",
-      "categoryName": "Paid",
-      "title": "Bamboo",
-      "complete": false
+      "title": "GitHub",
+      "complete": false,
+      "id": 4,
+      "type": "1",
+      "typeDescription": "Source Control Management",
+      "categoryId": "3",
+      "categoryName": "Freemium"
     },
     {
-      "id": 3,
-      "type": "2",
-      "typeDescription": "Continous Integration",
-      "categoryId": "4",
-      "categoryName": "Paid",
-      "title": "AWS Code Build",
-      "complete": false
+      "title": "Subversion",
+      "complete": false,
+      "id": 5,
+      "type": "1",
+      "typeDescription": "Source Control Management",
+      "categoryId": "1",
+      "categoryName": "Open Source"
     },
     {
       "id": 9,
@@ -91,75 +100,12 @@
       "complete": false
     },
     {
-      "id": 11,
-      "type": "3",
-      "typeDescription": "Testing",
-      "categoryId": "2",
-      "categoryName": "Free",
-      "title": "Karma",
-      "complete": false
-    },
-    {
-      "id": 12,
-      "type": "3",
-      "typeDescription": "Testing",
-      "categoryId": "2",
-      "categoryName": "Free",
-      "title": "JUnit",
-      "complete": false
-    },
-    {
-      "id": 13,
-      "type": "3",
-      "typeDescription": "Testing",
-      "categoryId": "2",
-      "categoryName": "Free",
-      "title": "JMeter",
-      "complete": false
-    },
-    {
-      "id": 14,
-      "type": "3",
-      "typeDescription": "Testing",
-      "categoryId": "2",
-      "categoryName": "Free",
-      "title": "Selenium",
-      "complete": false
-    },
-    {
-      "id": 15,
-      "type": "4",
-      "typeDescription": "Configuration",
-      "categoryId": "5",
-      "categoryName": "Enterprise",
-      "title": "Chef",
-      "complete": false
-    },
-    {
-      "id": 16,
-      "type": "4",
-      "typeDescription": "Configuration",
-      "categoryId": "5",
-      "categoryName": "Enterprise",
-      "title": "Puppet",
-      "complete": false
-    },
-    {
-      "id": 17,
-      "type": "4",
-      "typeDescription": "Configuration",
+      "id": 23,
+      "type": "6",
+      "typeDescription": "Containers",
       "categoryId": "1",
       "categoryName": "Open Source",
-      "title": "Ansible",
-      "complete": false
-    },
-    {
-      "id": 18,
-      "type": "4",
-      "typeDescription": "Configuration",
-      "categoryId": "1",
-      "categoryName": "Open Source",
-      "title": "Rudder",
+      "title": "Docker",
       "complete": false
     },
     {
@@ -172,12 +118,102 @@
       "complete": false
     },
     {
+      "id": 2,
+      "type": "2",
+      "typeDescription": "Continous Integration",
+      "categoryId": "4",
+      "categoryName": "Paid",
+      "title": "Bamboo",
+      "complete": false
+    },
+    {
+      "id": 18,
+      "type": "4",
+      "typeDescription": "Configuration",
+      "categoryId": "1",
+      "categoryName": "Open Source",
+      "title": "Rudder",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "type": "2",
+      "typeDescription": "Continous Integration",
+      "categoryId": "4",
+      "categoryName": "Paid",
+      "title": "AWS Code Build",
+      "complete": false
+    },
+    {
+      "id": 12,
+      "type": "3",
+      "typeDescription": "Testing",
+      "categoryId": "2",
+      "categoryName": "Free",
+      "title": "JUnit",
+      "complete": false
+    },
+    {
+      "id": 16,
+      "type": "4",
+      "typeDescription": "Configuration",
+      "categoryId": "5",
+      "categoryName": "Enterprise",
+      "title": "Puppet",
+      "complete": false
+    },
+    {
+      "id": 14,
+      "type": "3",
+      "typeDescription": "Testing",
+      "categoryId": "2",
+      "categoryName": "Free",
+      "title": "Selenium",
+      "complete": false
+    },
+    {
+      "title": "Nexus",
+      "complete": false,
+      "id": 7,
+      "type": "1",
+      "typeDescription": "Source Control Management",
+      "categoryId": "1",
+      "categoryName": "Open Source"
+    },
+    {
+      "id": 17,
+      "type": "4",
+      "typeDescription": "Configuration",
+      "categoryId": "1",
+      "categoryName": "Open Source",
+      "title": "Ansible",
+      "complete": false
+    },
+    {
       "id": 20,
       "type": "4",
       "typeDescription": "Configuration",
       "categoryId": "1",
       "categoryName": "Open Source",
       "title": "Salt",
+      "complete": false
+    },
+    {
+      "id": 24,
+      "type": "6",
+      "typeDescription": "Containers",
+      "categoryId": "1",
+      "categoryName": "Open Source",
+      "title": "Kubernetes",
+      "complete": false
+    },
+    {
+      "id": 22,
+      "type": "5",
+      "typeDescription": "Deployment",
+      "categoryId": "5",
+      "categoryName": "Enterprise",
+      "title": "ElasticBox",
       "complete": false
     }
   ]

@@ -3,7 +3,8 @@
  	width:1050px;
   margin:30px auto;
   position:relative;
-  top: 310px;
+  top: 235px;
+  text-align: center;
 } 
 
 .main:after {
@@ -13,8 +14,8 @@
 }
  
 .main li {
- 	width:80px;
-  height:80px;
+ 	width:100px;
+  height:75px;
   border:1px solid rgba(0,0,0,0.3);
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);
   position:relative;
@@ -25,7 +26,7 @@
   cursor:pointer;
   padding-top:20px;
   overflow:hidden;
-  transition:all .2s ease-in;
+  transition:all .4s ease-in;
   text-shadow:0 1px 0 rgba(255,255,255,0.2);
 }
 
@@ -77,16 +78,15 @@
   transform:none;
 }
 
-.type-0 { background:#fff; }
-.type-1 { background:#dddddd; }
-.type-2 { background:#a8bffa; }
+.type-0 { background:#dddddd; }
+.type-1 { background:#3bd93b; }
+.type-2 { background:#e0e5f3; }
 .type-3 { background:#F8B707; }
-.type-4 { background:#f3f300; }
-.type-5 { background:#3bd93b; }
+.type-4 { background:#4CAFFA; }
+.type-5 { background:#f3f300; }
 .type-6 { background:#dd9999; }
-.type-7 { background:#4CAFFA; }
-.type-8 { background:#ffaa88; }
-.type-9 { background:#ddaacc; }
+.type-7 { background:#ffaa88; }
+.type-8 { background:#fff; }
 
 .cat-0 { color:#222; }
 .cat-1 { color:#0000dc; }
@@ -95,10 +95,30 @@
 .cat-4 { color:rgb(3, 37, 4); }
 .cat-5 { color:#b50da4; }
 
+.cat-style-1 {
+  width: 160px !important;
+}
+
+.cat-style-2 {
+  width: 100px !important;
+}
+
+.cat-style-3 {
+  width: 240px !important;
+}
+
+.cat-style-4 {
+  width: 140px !important;
+}
+
+.cat-style-5 {
+  width: 115px !important;
+}
+
 .legend {
  	position:absolute;
   top:130px;
-  left:38%;
+  left:34%;
   padding:10px;
   font-size:11px;
   background:#f1edec;
@@ -120,7 +140,7 @@
 
 .legend .list-2 {
  	margin-left:40px; 
-  width:200px;
+  width:260px;
 }
 
 .legend .list-1 li { 
