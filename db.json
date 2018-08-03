@@ -10,21 +10,12 @@
       "complete": false
     },
     {
-      "id": 8,
-      "type": "1",
-      "typeDescription": "Source Control Management",
-      "categoryId": "1",
-      "categoryName": "Open Source",
-      "title": "Artifactory",
-      "complete": false
-    },
-    {
-      "id": 15,
-      "type": "4",
-      "typeDescription": "Configuration",
-      "categoryId": "5",
-      "categoryName": "Enterprise",
-      "title": "Chef",
+      "id": 11,
+      "type": "3",
+      "typeDescription": "Testing",
+      "categoryId": "2",
+      "categoryName": "Free",
+      "title": "Karma",
       "complete": false
     },
     {
@@ -37,6 +28,24 @@
       "complete": false
     },
     {
+      "id": 15,
+      "type": "4",
+      "typeDescription": "Configuration",
+      "categoryId": "5",
+      "categoryName": "Enterprise",
+      "title": "Chef",
+      "complete": false
+    },
+    {
+      "id": 8,
+      "type": "1",
+      "typeDescription": "Source Control Management",
+      "categoryId": "1",
+      "categoryName": "Open Source",
+      "title": "Artifactory",
+      "complete": false
+    },
+    {
       "title": "BitBucket",
       "complete": false,
       "id": 6,
@@ -44,15 +53,6 @@
       "typeDescription": "Source Control Management",
       "categoryId": "3",
       "categoryName": "Freemium"
-    },
-    {
-      "id": 11,
-      "type": "3",
-      "typeDescription": "Testing",
-      "categoryId": "2",
-      "categoryName": "Free",
-      "title": "Karma",
-      "complete": false
     },
     {
       "id": 1,
