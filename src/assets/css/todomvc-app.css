@@ -28,10 +28,42 @@ button {
 	display: none;
 }
 
+.addTool {
+	background: #e6e6e6;
+	margin: 130px 0 40px 0;
+	/* position: relative;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+				0 25px 50px 0 rgba(0, 0, 0, 0.1);
+							 */
+	text-align: center
+}
+
+.label-type{
+	margin-bottom: 35px;
+}
+
+.heading{
+	text-align: center;
+	color:white;
+}
+
+.dropdown{
+	/* margin-left: 35px; */
+	width: 200px
+}
+
+.save{
+	text-align: center;
+	border-style: solid;
+    border-width: thin;
+}
+
 .todoapp {
 	background: #fff;
 	margin: 130px 0 40px 0;
 	position: relative;
+	width: 50%;
+    margin-left: 500px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
 	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
