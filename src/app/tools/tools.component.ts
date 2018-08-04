@@ -23,6 +23,8 @@ export class ToolsComponent implements OnInit {
 
   todos: Todo[] = [];
   addNewTool={}
+  typeArray = [];
+  categoryArray = [];
 
   constructor(
     private todoDataService: TodoDataService
@@ -35,6 +37,26 @@ export class ToolsComponent implements OnInit {
       .subscribe(
         (todos) => {
           this.todos = todos;
+          const initialArr = todos as any;
+          const uniqueArrayofTypeElem = [];
+          const uniqueArrayofType = [];
+          const uniqueArrayofCategoryElem = [];
+          const uniqueArrayofCategory = [];
+           initialArr.forEach((elem,i) => {
+            if (!uniqueArrayofTypeElem.includes(elem.typeDescription)) {
+              uniqueArrayofTypeElem.push(elem.typeDescription);
+              uniqueArrayofType.push({ type: elem.type, typeDescription: elem.typeDescription });
+            }
+
+            if (!uniqueArrayofCategoryElem.includes(elem.categoryName)) {
+              uniqueArrayofCategoryElem.push(elem.categoryName);
+              uniqueArrayofCategory.push({ categoryId: elem.categoryId, categoryName: elem.categoryName });
+            }
+          });
+          
+          this.typeArray = uniqueArrayofType;
+          this.categoryArray = uniqueArrayofCategory;
+          console.log(this.typeArray);
         }
       );
   }

@@ -7,8 +7,8 @@
     <label class="label-type">Type: </label>
     <select (change)="onTypeChange($event.target.value,$event.target.selectedOptions[0].id)" class="dropdown">
         <option value="0">--All--</option>
-        <option *ngFor="let summary of todos" value={{summary.typeDescription}} id={{summary.type}}>
-            {{summary.typeDescription}}
+        <option *ngFor="let type of typeArray" value={{type.typeDescription}} id={{type.type}}>
+            {{type.typeDescription}}
         </option>
     </select>
 </div>
@@ -16,8 +16,8 @@
     <label class="label-type">Category: </label>
     <select (change)="onCategoryChange($event.target.value,$event.target.selectedOptions[0].id)" class="dropdown">
         <option value="0">--All--</option>
-        <option *ngFor="let summary of todos" value={{summary.categoryName}} id={{summary.categoryId}}>
-            {{summary.categoryName}}
+        <option *ngFor="let category of categoryArray" value={{category.categoryName}} id={{category.categoryId}}>
+            {{category.categoryName}}
         </option>
     </select>
 </div>
