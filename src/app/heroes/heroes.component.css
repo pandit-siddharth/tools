@@ -1,11 +1,21 @@
-
 .wrapper {
- 	width:1050px;
-  margin:30px auto;
+ 	width:1322px;
+  margin:15px auto;
   position:relative;
-  top: 235px;
+  top: 175px;
   text-align: center;
-} 
+}
+
+.tabs {
+  position:relative;
+  top: 225px;
+  text-align: center;
+  margin-left: 380px;
+}
+
+.subTab {
+  min-width: 200px;
+}
 
 .main:after {
  	clear:both;
@@ -116,14 +126,14 @@
 }
 
 .legend {
- 	position:absolute;
-  top:130px;
-  left:34%;
-  padding:10px;
-  font-size:11px;
-  background:#f1edec;
-  border:1px solid rgba(0,0,0,0.2);
-  border-radius:15px;
+ 	position: absolute;
+  top: 100px;
+  left: 34%;
+  padding: 8px;
+  font-size: 11px;
+  background: #f1edec;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 15px;
   box-shadow:
     inset 0 1px 1px white,
     inset 0 -5px 3px #dddcdb,
@@ -136,11 +146,15 @@
   clear:table;
 }
 
-.legend ul { float:left; list-style: none; }
+.legend ul { 
+  float:left; 
+  list-style: none;
+  margin-bottom: 0;
+}
 
 .legend .list-2 {
  	margin-left:40px; 
-  width:260px;
+  width:360px;
 }
 
 .legend .list-1 li { 
@@ -164,6 +178,6 @@
   padding:3px;
  	float:left; 
   border:1px solid rgba(0,0,0,0.2);
-  width:48%;
+  width:30%;
   cursor:pointer;
 }

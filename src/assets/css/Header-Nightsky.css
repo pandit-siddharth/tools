@@ -26,18 +26,6 @@ body {
     border: none;
 }
 
-.header-nightsky .navbar-default .navbar-nav>.open>a,
-.header-nightsky .navbar-default .navbar-nav>.open>a:focus,
-.header-nightsky .navbar-default .navbar-nav>.open>a:hover {
-    color: #ccc;
-    background-color: transparent;
-}
-
-.header-nightsky .nav>li>a:focus,
-.header-nightsky .nav>li>a:hover {
-    color: #ccc;
-    background-color: transparent;
-}
 
 .header-nightsky .navbar-nav>li {
     margin-right: 20px;
@@ -89,7 +77,7 @@ body {
     line-height: 1.5;
 }
 
-.header-nightsky .btn-primary {
+/*.header-nightsky .btn-primary {
     color: #fff;
     background-color: transparent;
     border-color: #fffbfb !important;
@@ -107,7 +95,7 @@ body {
 
 .header-nightsky .btn-primary:active {
     transform:translateY(1px);
-}
+}*/
 
 @media screen and (max-width: 767px) {
 

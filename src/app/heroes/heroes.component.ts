@@ -15,6 +15,13 @@ export class HeroesComponent implements OnInit, AfterContentInit {
   typeArr = [];
   categoryArr = [];
   selectedHero: Hero;
+  selectedTab = '';
+  overviewHeadingClass = 'active';
+  tutorialHeadingClass = '';
+  pocHeadingClass = '';
+  overviewBodyClass = 'tab-pane fade in active';
+  tutorialBodyClass = 'tab-pane';
+  pocBodyClass = 'tab-pane';
 
   constructor(private todoDataService: TodoDataService) { }
 
@@ -25,32 +32,104 @@ export class HeroesComponent implements OnInit, AfterContentInit {
         (todos) => {
           console.log(todos);
           this.todos = todos;
-          const initialArr = todos as any;
-          const uniqueArrayofTypeElem = [];
-          const uniqueArrayofTypeObj = [];
-          const uniqueArrayofCatElem = [];
-          const uniqueArrayofCatObj = [];
-
-          initialArr.forEach(elem => {
-            if (!uniqueArrayofTypeElem.includes(elem.typeDescription)) {
-              uniqueArrayofTypeElem.push(elem.typeDescription);
-              uniqueArrayofTypeObj.push({ type: elem.type, typeDescription: elem.typeDescription });
-            }
-
-            if (!uniqueArrayofCatElem.includes(elem.categoryName)) {
-              uniqueArrayofCatElem.push(elem.categoryName);
-              uniqueArrayofCatObj.push({ categoryId: elem.categoryId, categoryName: elem.categoryName });
-            }
-
-          });
-          this.typeArr = uniqueArrayofTypeObj;
-          this.categoryArr = uniqueArrayofCatObj;
+          this.categoryArr = this.getUniqueCategories(todos);
+          this.typeArr = this.getUniqueTypes(todos);
         }
       );
   }
 
+  getUniqueCategories(todos): any {
+    const initialArr = todos as any;
+    const uniqueArrayofTypeElem = [];
+    const uniqueArrayofTypeObj = [];
+    const uniqueArrayofCatElem = [];
+    const uniqueArrayofCatObj = [];
+
+    initialArr.forEach(elem => {
+      if (!uniqueArrayofTypeElem.includes(elem.typeDescription)) {
+        uniqueArrayofTypeElem.push(elem.typeDescription);
+        uniqueArrayofTypeObj.push({ type: elem.type, typeDescription: elem.typeDescription });
+      }
+
+      if (!uniqueArrayofCatElem.includes(elem.categoryName)) {
+        uniqueArrayofCatElem.push(elem.categoryName);
+        uniqueArrayofCatObj.push({ categoryId: elem.categoryId, categoryName: elem.categoryName });
+      }
+
+    });
+    return uniqueArrayofCatObj;
+    // this.typeArr = uniqueArrayofTypeObj;
+    // this.categoryArr = uniqueArrayofCatObj;
+  }
+
+  getUniqueTypes(todos): any {
+    const initialArr = todos as any;
+    const uniqueArrayofTypeElem = [];
+    const uniqueArrayofTypeObj = [];
+    const uniqueArrayofCatElem = [];
+    const uniqueArrayofCatObj = [];
+
+    initialArr.forEach(elem => {
+      if (!uniqueArrayofTypeElem.includes(elem.typeDescription)) {
+        uniqueArrayofTypeElem.push(elem.typeDescription);
+        uniqueArrayofTypeObj.push({ type: elem.type, typeDescription: elem.typeDescription });
+      }
+
+      if (!uniqueArrayofCatElem.includes(elem.categoryName)) {
+        uniqueArrayofCatElem.push(elem.categoryName);
+        uniqueArrayofCatObj.push({ categoryId: elem.categoryId, categoryName: elem.categoryName });
+      }
+
+    });
+    return uniqueArrayofTypeObj;
+    // this.typeArr = uniqueArrayofTypeObj;
+    // this.categoryArr = uniqueArrayofCatObj;
+  }
+
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+    this.onOverviewClick();
+  }
+
+  // applyClass(tab): void {
+  //   if (tab === 'overview') {
+  //     return 'subTab active';
+
+  //   } else if (tab === 'tutorial') {
+
+  //   } else {
+
+  //   }
+  // }
+
+  onOverviewClick(): void {
+    this.selectedTab = 'overview';
+    this.overviewHeadingClass = 'active';
+    this.tutorialHeadingClass = '';
+    this.pocHeadingClass = '';
+    this.overviewBodyClass = 'tab-pane fade in active';
+    this.tutorialBodyClass = 'tab-pane';
+    this.pocBodyClass = 'tab-pane';
+  }
+
+  onTutorialClick(): void {
+    this.selectedTab = 'tutorial';
+    this.overviewHeadingClass = '';
+    this.tutorialHeadingClass = 'active';
+    this.pocHeadingClass = '';
+    this.overviewBodyClass = 'tab-pane';
+    this.tutorialBodyClass = 'tab-pane fade in active';
+    this.pocBodyClass = 'tab-pane';
+  }
+
+  onPOCClick(): void {
+    this.selectedTab = 'poc';
+    this.overviewHeadingClass = '';
+    this.tutorialHeadingClass = '';
+    this.pocHeadingClass = 'active';
+    this.overviewBodyClass = 'tab-pane';
+    this.tutorialBodyClass = 'tab-pane';
+    this.pocBodyClass = 'tab-pane fade in active';
   }
 
   onPageLoad(): void {
