@@ -15,6 +15,7 @@ export class ToolsComponent implements OnInit {
   addNewTool = {};
   categoryArr: any;
   typeArr: any;
+  emptyError: string;
 
 
   typeArray = [];
@@ -92,18 +93,21 @@ export class ToolsComponent implements OnInit {
 
   onKey(value) {
     this.addNewTool = Object.assign(this.addNewTool, { title: value, 'complete': false });
+    this.emptyError = '';
   }
 
-  onSubmit() {
-    console.log('here');
-    this.todoDataService
-      .addTodo(this.addNewTool)
-      .subscribe(
-        (newTodo) => {
-          console.log(newTodo);
-          //this.todos = this.todos.concat(newTodo);
-        }
-      );
+  onSubmit(value) {
+    if (value !== '') {
+      this.todoDataService
+        .addTodo(this.addNewTool)
+        .subscribe(
+          (newTodo) => {
+            console.log(newTodo);
+            //this.todos = this.todos.concat(newTodo);
+          });
+    } else {
+      this.emptyError = 'Please fill in the name';
+    }
   }
 
   onRemoveTodo(todo) {
