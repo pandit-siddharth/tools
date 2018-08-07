@@ -1,15 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-tools',
-//   templateUrl: './tools.component.html'
-// })
-// export class ToolsComponent {
-
-//   constructor() { }
-
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../todo-data.service';
 import { Todo } from '../todo';
@@ -23,9 +11,15 @@ import { Todo } from '../todo';
 export class ToolsComponent implements OnInit {
 
   todos: Todo[] = [];
+
   addNewTool = {};
   categoryArr: any;
   typeArr: any;
+
+
+  typeArray = [];
+  categoryArray = [];
+
 
   constructor(private todoDataService: TodoDataService) {
   }
@@ -38,9 +32,7 @@ export class ToolsComponent implements OnInit {
           this.todos = todos;
           this.categoryArr = this.getUniqueCategories(todos);
           this.typeArr = this.getUniqueTypes(todos);
-          // console.log(this.categoryArr);
-        }
-      );
+        });
   }
 
   getUniqueCategories(todos): any {
@@ -63,8 +55,6 @@ export class ToolsComponent implements OnInit {
 
     });
     return uniqueArrayofCatObj;
-    // this.typeArr = uniqueArrayofTypeObj;
-    // this.categoryArr = uniqueArrayofCatObj;
   }
 
   getUniqueTypes(todos): any {
@@ -87,8 +77,6 @@ export class ToolsComponent implements OnInit {
 
     });
     return uniqueArrayofTypeObj;
-    // this.typeArr = uniqueArrayofTypeObj;
-    // this.categoryArr = uniqueArrayofCatObj;
   }
 
   onTypeChange(value, id) {

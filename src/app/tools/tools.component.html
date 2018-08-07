@@ -1,20 +1,6 @@
-<!-- <div>
-    <label>Category: </label>
-    <select>
-        <option value="0">--All--</option>
-        <option *ngFor="let summary of todos" value={{summary.categoryName}} id={{summary.categoryId}}>
-            {{summary.categoryName}}
-        </option>
-    </select>
-</div> -->
-
 <section class="todoapp">
-    <!-- <app-todo-list-header (add)="onAddTodo($event)"></app-todo-list-header>
-  <app-todo-list [todos]="todos" (toggleComplete)="onToggleTodoComplete($event)" (remove)="onRemoveTodo($event)"></app-todo-list>
-  <app-todo-list-footer [todos]="todos"></app-todo-list-footer> -->
     <div class="form-group">
         <label for="exampleFormControlSelect1">Type:</label>
-
         <select class="form-control" id="exampleFormControlSelect1" data-style="btn-new" (change)="onTypeChange($event.target.value,$event.target.selectedOptions[0].id)">
             <option value="0">--All--</option>
             <option *ngFor="let summary of typeArr" value={{summary.typeDescription}} id={{summary.type}}>
