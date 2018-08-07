@@ -97,13 +97,12 @@ export class ToolsComponent implements OnInit {
   }
 
   onSubmit(value) {
-    if (value !== '') {
+    if (value && value.trim() !== '') {
       this.todoDataService
         .addTodo(this.addNewTool)
         .subscribe(
           (newTodo) => {
             console.log(newTodo);
-            //this.todos = this.todos.concat(newTodo);
           });
     } else {
       this.emptyError = 'Please fill in the name';
