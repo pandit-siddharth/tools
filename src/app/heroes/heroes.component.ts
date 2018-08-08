@@ -14,6 +14,7 @@ export class HeroesComponent implements OnInit, AfterContentInit {
   todos: Todo[] = [];
   typeArr = [];
   categoryArr = [];
+  toolsArr = [];
   selectedHero: Hero;
   selectedTab = '';
   overviewHeadingClass = 'active';
@@ -30,12 +31,25 @@ export class HeroesComponent implements OnInit, AfterContentInit {
       .getAllTodos()
       .subscribe(
         (todos) => {
-          console.log(todos);
-          this.todos = todos;
+          this.todos = this.getUniqueTools(todos);
           this.categoryArr = this.getUniqueCategories(todos);
           this.typeArr = this.getUniqueTypes(todos);
         }
       );
+  }
+
+  getUniqueTools(todos): any{
+    const initialArr = todos as any;
+    const uniqueArrayofTitle = [];
+    const uniqueArrayofTools = [];
+     initialArr.forEach(elem => {
+      if (!uniqueArrayofTitle.includes(elem.title)) {
+        uniqueArrayofTitle.push(elem.title);
+        uniqueArrayofTools.push({ type: elem.type, typeDescription: elem.typeDescription, 
+          categoryId: elem.categoryId, categoryName: elem.categoryName,title: elem.title,id: elem.id });
+      }
+     });
+    return uniqueArrayofTools;
   }
 
   getUniqueCategories(todos): any {
@@ -58,8 +72,6 @@ export class HeroesComponent implements OnInit, AfterContentInit {
 
     });
     return uniqueArrayofCatObj;
-    // this.typeArr = uniqueArrayofTypeObj;
-    // this.categoryArr = uniqueArrayofCatObj;
   }
 
   getUniqueTypes(todos): any {
@@ -81,26 +93,13 @@ export class HeroesComponent implements OnInit, AfterContentInit {
       }
 
     });
-    return uniqueArrayofTypeObj;
-    // this.typeArr = uniqueArrayofTypeObj;
-    // this.categoryArr = uniqueArrayofCatObj;
+    return uniqueArrayofTypeObj
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.onOverviewClick();
   }
-
-  // applyClass(tab): void {
-  //   if (tab === 'overview') {
-  //     return 'subTab active';
-
-  //   } else if (tab === 'tutorial') {
-
-  //   } else {
-
-  //   }
-  // }
 
   onOverviewClick(): void {
     this.selectedTab = 'overview';
