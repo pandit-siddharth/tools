@@ -38,17 +38,22 @@ export class HeroesComponent implements OnInit, AfterContentInit {
       );
   }
 
-  getUniqueTools(todos): any{
+  getUniqueTools(todos): any {
     const initialArr = todos as any;
     const uniqueArrayofTitle = [];
     const uniqueArrayofTools = [];
-     initialArr.forEach(elem => {
+    initialArr.forEach(elem => {
       if (!uniqueArrayofTitle.includes(elem.title)) {
         uniqueArrayofTitle.push(elem.title);
-        uniqueArrayofTools.push({ type: elem.type, typeDescription: elem.typeDescription, 
-          categoryId: elem.categoryId, categoryName: elem.categoryName,title: elem.title,id: elem.id });
+        let acronym = elem.typeDescription;
+        acronym = acronym ? acronym.match(/\b(\w)/g).join('') : '';
+        uniqueArrayofTools.push({
+          type: elem.type, typeDescription: elem.typeDescription,
+          categoryId: elem.categoryId, categoryName: elem.categoryName, title: elem.title, id: elem.id,
+          overview: elem.overview, setup: elem.setup, tutorial: elem.tutorial, acronym: acronym
+        });
       }
-     });
+    });
     return uniqueArrayofTools;
   }
 
@@ -93,12 +98,17 @@ export class HeroesComponent implements OnInit, AfterContentInit {
       }
 
     });
-    return uniqueArrayofTypeObj
+    return uniqueArrayofTypeObj;
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.onOverviewClick();
+    setTimeout(() => {
+      if ($('#table').offset()) {
+        $('html, body').animate({ scrollTop: $('#table').offset().top - 100 }, 'slow');
+      }
+    }, 0);
   }
 
   onOverviewClick(): void {

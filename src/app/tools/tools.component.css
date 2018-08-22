@@ -1,8 +1,9 @@
 .todoapp {
-  margin-left: 500px;
+  margin-left: 590px;
+  margin-top: 100px;
   width: 510px;
-  padding: 18px;
-  font-size: 11px;
+  padding: 28px;
+  font-size: 16px;
   background: #f1edec;
   border: 1px solid rgba(0,0,0,0.2);
   border-radius: 15px;
@@ -10,4 +11,16 @@
     inset 0 1px 1px white,
     inset 0 -5px 3px #dddcdb,
     0 0 10px rgba(0,0,0,0.2);
+}
+
+#exampleFormControlSelect1 {
+  margin-bottom: 10px;
+}
+
+#exampleFormControlSelect2 {
+  margin-bottom: 10px;
+}
+
+#toolName {
+  margin-bottom: 10px;
 }

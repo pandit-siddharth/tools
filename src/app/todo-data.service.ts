@@ -16,6 +16,11 @@ export class TodoDataService {
     return this.api.createTodo(todo);
   }
 
+   // Simulate POST /todos for admin login
+  login(todo): Observable<Todo> {
+    return this.api.adminLogin(todo);
+  }
+
   // Simulate DELETE /todos/:id
   deleteTodoById(todoId: number): Observable<Todo> {
     return this.api.deleteTodoById(todoId);

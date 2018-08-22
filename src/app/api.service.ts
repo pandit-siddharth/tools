@@ -12,6 +12,8 @@ const API_URL = environment.apiUrl;
 let body = new URLSearchParams();
 @Injectable()
 export class ApiService {
+  headers: Headers;
+  options: RequestOptions;
 
   constructor(
     private http: Http
@@ -23,14 +25,14 @@ export class ApiService {
       .get(API_URL + '/tools')
       .map(response => {
         const todos = response.json();
-        return todos.map((todo) => new Todo(todo));
+        return todos.data.map((todo) => new Todo(todo));
       })
       .catch(this.handleError);
   }
 
   public createTodo(todo): Observable<Todo> {
-    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    let options = new RequestOptions({ headers: headers });
+    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const options = new RequestOptions({ headers: headers });
     body.set('typeValue', todo.typeValue);
     body.set('typeId', todo.typeId);
     body.set('categoryValue', todo.categoryValue);
@@ -41,7 +43,21 @@ export class ApiService {
     return this.http
       .post('http://localhost:3333/create', body, options)
       .map(response => {
-        return new Todo(response);
+        return new Todo(response.json());
+      })
+      .catch(this.handleError);
+  }
+
+  public adminLogin(todo): Observable<Todo> {
+    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const options = new RequestOptions({ headers: headers });
+    body.set('username', todo.username);
+    body.set('password', todo.password);
+
+    return this.http
+      .post('http://localhost:3333/login', body, options)
+      .map(response => {
+        return new Todo(response.json());
       })
       .catch(this.handleError);
   }
@@ -64,15 +80,19 @@ export class ApiService {
       .catch(this.handleError);
   }
 
-  public deleteTodoById(todoId: number): Observable<null> {
+  public deleteTodoById(todoId): Observable<null> {
+    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const options = new RequestOptions({ headers: headers });
     return this.http
-      .delete(API_URL + '/tools/' + todoId)
-      .map(response => null)
+      .delete('http://localhost:3333/delete/' + todoId, options)
+      .map(response => {
+        const todos = response.json();
+        return todos;
+      })
       .catch(this.handleError);
   }
 
   private handleError(error: Response | any) {
-    console.error('ApiService::handleError', error);
     return Observable.throw(error);
   }
 }

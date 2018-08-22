@@ -1,5 +1,5 @@
 .wrapper {
- 	width:1322px;
+ 	width:1280px;
   margin:15px auto;
   position:relative;
   top: 175px;
@@ -9,12 +9,16 @@
 .tabs {
   position:relative;
   top: 225px;
-  text-align: center;
   margin-left: 380px;
 }
 
 .subTab {
-  min-width: 200px;
+  min-width: 232px;
+  text-align: center;
+}
+
+.panel-body {
+  min-height: 150px;
 }
 
 .main:after {
@@ -24,13 +28,13 @@
 }
  
 .main li {
- 	width:100px;
+  width:100px;
+  float: left;
   height:75px;
   border:1px solid rgba(0,0,0,0.3);
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);
   position:relative;
   font-size:14px;
-  float:left;
   padding:0 2px;
   margin:1px;
   cursor:pointer;
@@ -60,8 +64,7 @@
   filter:grayscale(70%);
 }
 
-.main li:before,
-.main li:after {
+.main li:before {
  	content:attr(data-pos);
   position:absolute;
   top:3px;
@@ -73,8 +76,13 @@
 
 .main li:after {
   content:attr(data-nb);
+  position:absolute;
+  top:3px;
   left:auto;
   right:3px;
+  color:black;
+  font-size:8px;
+  line-height:1;
 }
 
 .main li:hover {
@@ -106,31 +114,31 @@
 .cat-5 { color:#b50da4; }
 
 .cat-style-1 {
-  width: 160px !important;
-}
-
-.cat-style-2 {
-  width: 100px !important;
-}
-
-.cat-style-3 {
-  width: 240px !important;
-}
-
-.cat-style-4 {
   width: 140px !important;
 }
 
+.cat-style-2 {
+  width: 110px !important;
+}
+
+.cat-style-3 {
+  width: 220px !important;
+}
+
+.cat-style-4 {
+  width: 120px !important;
+}
+
 .cat-style-5 {
-  width: 115px !important;
+  width: 95px !important;
 }
 
 .legend {
  	position: absolute;
   top: 100px;
-  left: 34%;
+  left: 31%;
   padding: 8px;
-  font-size: 11px;
+  font-size: 12px;
   background: #f1edec;
   border: 1px solid rgba(0,0,0,0.2);
   border-radius: 15px;
@@ -180,4 +188,8 @@
   border:1px solid rgba(0,0,0,0.2);
   width:30%;
   cursor:pointer;
+}
+
+.panel-success {
+  border-color: #23222269;
 }

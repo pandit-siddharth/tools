@@ -1,0 +1,19 @@
+<div *ngIf="showLoader" class="page-loading">
+</div>
+<section class="todoapp">
+    <div class="form-group text-center">
+        <label for="name">Delete a Tool</label>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Title:</label>
+        <select class="form-control" id="titleSelect" data-style="btn-new" (change)="deleteById($event.target.value)">
+            <option value="">--All--</option>
+            <option *ngFor="let data of todos" value={{data._id}} id={{data._id}}>
+                {{data.title}}
+            </option>
+        </select>
+        <label class="error text-danger">{{emptyError}}</label>
+    </div>
+    <button *ngIf="!deleted" class="btn btn-primary mb-2" (click)="onSubmit()">Delete</button>
+    <label class="error text-danger">{{confirmationMessage}}</label>
+</section>

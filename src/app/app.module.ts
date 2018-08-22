@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ToolsComponent } from './tools/tools.component';
 import { ErrorComponent } from './error/error.component';
 import { AdminComponent } from './admin/admin.component';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdminComponent } from './admin/admin.component';
     TodoListItemComponent,
     ToolsComponent,
     ErrorComponent,
-    AdminComponent
+    AdminComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

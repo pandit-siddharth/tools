@@ -151,7 +151,10 @@
       "categoryId": "2",
       "categoryName": "Free",
       "title": "JUnit",
-      "complete": false
+      "complete": false,
+      "overview": "<ul><li>JUnit is an open source framework, which is used for writing and running tests.</li><li>Provides annotations to identify test methods.</li><li>Provides assertions for testing expected results.</li><li>Provides test runners for running tests.</li><li>JUnit tests allow you to write codes faster, which increases quality.</li><li>JUnit is elegantly simple. It is less complex and takes less time.</li><li>JUnit tests can be run automatically and they check their own results and provide immediate feedback. There is no need to manually comb through a report of test results.</li><li>JUnit tests can be organized into test suites containing test cases and even other test suites.</li><li>JUnit shows test progress in a bar that is green if the test is running smoothly, and it turns red when a test fails.</li></ul>",
+      "setup": "Please open the link for details: <br><br> <a target='_blank' href='https://docs.google.com/document/d/19rWNjINSn7cDgNr3RBBFwJGNx9upSqPyZyDoPOUwCOQ'>Setup document</a>",
+      "tutorial": "Please open the link for details: <br><br> <a target='_blank' href='https://docs.google.com/document/d/19rWNjINSn7cDgNr3RBBFwJGNx9upSqPyZyDoPOUwCOQ'>POCs / Webinars</a>"
     },
     {
       "id": 16,
@@ -181,13 +184,25 @@
       "categoryName": "Open Source"
     },
     {
+      "id": 26,
+      "type": "7",
+      "typeDescription": "Cloud",
+      "categoryId": "3",
+      "categoryName": "Freemium",
+      "title": "AWS",
+      "complete": false
+    },
+    {
       "id": 17,
       "type": "4",
       "typeDescription": "Configuration",
       "categoryId": "1",
       "categoryName": "Open Source",
       "title": "Ansible",
-      "complete": false
+      "complete": false,
+      "overview": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy.<br></br>It support configuration management with examples as below.<br><ul><li>Configuration of servers</li><li>Application deployment</li><li>Continuous testing of already install application</li><li>Provisioning</li><li>Orchestration</li><li>Automation of tasks</li></ul><br>Ansible is Written in Python,Agentless,Push-based Ansible uses a simple language known as YAML (Ansible Playbooks) to help developers describe automations tasks.",
+      "setup": "Please open the link for details: <br><br> <a target='_blank' href='https://docs.google.com/document/d/11jcvPuh8Py_JGCxH2OevsYnhMoy8oHIy1l3ehFQX33k'>Setup document</a>",
+      "tutorial": "Please open the link for details: <br><br> <a target='_blank' href='https://docs.google.com/document/d/1_VoorfgS8agAJ_1OdxzGZ8AqmrYjAje658LdpyUKUWA'>POCs / Webinars</a>"
     },
     {
       "id": 20,
@@ -214,6 +229,36 @@
       "categoryId": "5",
       "categoryName": "Enterprise",
       "title": "ElasticBox",
+      "complete": false
+    },
+    {
+      "id": 25,
+      "type": "4",
+      "typeDescription": "Configuration",
+      "categoryId": "1",
+      "categoryName": "Open Source",
+      "title": "Terraform",
+      "complete": false,
+      "overview": "Terraform is a tool for building, changing and versioning infrastructure safely & efficiently.<br></br>The infrastructure Terraform can manage includes low-level components such as compute instances, storage, and networking, as well as high-level components such as DNS entries, SaaS features, etc.",
+      "setup": "Please open the link for details: <br><br> <a target='_blank' href='https://docs.google.com/document/d/1AT02HMFTkR-zSmIdTum8H_0Of8QG9yKnTuXeQ4XK2dQ/edit?ts=5b716bf3'>Setup document</a>",
+      "tutorial": "Please open the link for details: <br><br> <a target='_blank' href='https://docs.google.com/document/d/1AT02HMFTkR-zSmIdTum8H_0Of8QG9yKnTuXeQ4XK2dQ/edit?ts=5b716bf3'>POCs / Webinars</a>"
+    },
+    {
+      "id": 27,
+      "type": "7",
+      "typeDescription": "Cloud",
+      "categoryId": "5",
+      "categoryName": "Enterprise",
+      "title": "Google Cloud",
+      "complete": false
+    },
+    {
+      "id": 28,
+      "type": "7",
+      "typeDescription": "Cloud",
+      "categoryId": "4",
+      "categoryName": "Paid",
+      "title": "Azure",
       "complete": false
     }
   ]

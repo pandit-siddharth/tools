@@ -3,14 +3,14 @@ body {
 }
 
 .header-nightsky {
-    background: url("../../assets/img/nightsky.jpg") no-repeat;
+    background: url("../../assets/img/background.jpg") no-repeat;
     background-size: cover;
     background-position: bottom;
     padding-bottom: 550px;
 }
 
 .header-nightsky .navbar-nav>li>a {
-    color: white;
+    color: #190109;
     font-size: 18px;
     border-radius: 10px;
 }
@@ -42,18 +42,18 @@ body {
 }
 
 .header-nightsky .navbar-toggle .icon-bar {
-    background-color: white;
+    background-color: #190109;
 }
 
 .header-nightsky .navbar-brand {
-    color: white;
-    font-size: 50px;
+    color: #190109;
+    font-size: 32px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .header-nightsky .navbar-brand:hover {
-    color: #ccc;
+    color: #190109;
 }
 
 .header-nightsky .hero {
@@ -61,7 +61,7 @@ body {
 }
 
 .header-nightsky .hero h1 {
-    color: white;
+    color: #190109;
     font-weight: bold;
     font-size: 60px;
     margin-bottom: 36px;

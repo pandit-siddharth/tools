@@ -1,24 +1,24 @@
 <div class="legend">
   <ul class="list-1">
-    <li *ngFor="let hero of categoryArr" ngClass="cat-{{hero.categoryId}}">
+    <li *ngFor="let hero of categoryArr" data-aos="flip-left" ngClass="cat-{{hero.categoryId}}">
       <span>**</span>{{hero.categoryName}}</li>
   </ul>
   <ul class="list-2">
-    <li *ngFor="let hero of typeArr" ngClass="type-{{hero.type}}">{{hero.typeDescription}}</li>
+    <li *ngFor="let hero of typeArr" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="2000" ngClass="type-{{hero.type}}">{{hero.typeDescription}}</li>
   </ul>
 </div>
 
 <div class="wrapper">
   <ul class="main">
-    <li *ngFor="let hero of todos" [class.selected]="hero === selectedHero" (click)="onSelect(hero)" attr.data-pos="{{hero.type}}"
-      attr.data-nb="{{hero.categoryName}}" ngClass="cat-{{hero.categoryId}} type-{{hero.type}} cat-style-{{hero.categoryId}}">{{hero.title}}
+    <li *ngFor="let hero of todos" id="tool" data-aos="flip-left" data-aos-easing="ease-out-cubic" [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)" attr.data-pos="{{hero.acronym}}" attr.data-nb="{{hero.categoryName}}" ngClass="cat-{{hero.categoryId}} type-{{hero.type}} cat-style-{{hero.categoryId}}">{{hero.title}}
       <span>Description</span>
     </li>
   </ul>
 </div>
 
 <div class="tabs" *ngIf="selectedHero">
-  <div class="col-md-7">
+  <div id="table" class="col-md-7">
     <div class="panel with-nav-tabs panel-success">
       <div class="panel-heading">
         <ul class="nav nav-tabs">
@@ -26,10 +26,10 @@
             <a href="javascript:void(0)" (click)="onOverviewClick()" data-toggle="tab">Overview</a>
           </li>
           <li ngClass="subTab {{tutorialHeadingClass}}">
-            <a href="javascript:void(0)" (click)="onTutorialClick()" data-toggle="tab">Tutorials</a>
+            <a href="javascript:void(0)" (click)="onTutorialClick()" data-toggle="tab">Installation / Configuration</a>
           </li>
           <li ngClass="subTab {{pocHeadingClass}}">
-            <a href="javascript:void(0)" (click)="onPOCClick()" data-toggle="tab">POCs</a>
+            <a href="javascript:void(0)" (click)="onPOCClick()" data-toggle="tab">Tutorials / Webinars</a>
           </li>
           <!--li class="dropdown">
                             <a href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -42,9 +42,9 @@
       </div>
       <div class="panel-body">
         <div class="tab-content">
-          <div class="{{overviewBodyClass}}" *ngIf="selectedHero">{{selectedHero.title}} Overview Details</div>
-          <div class="{{tutorialBodyClass}}" *ngIf="selectedHero">Here are the tutorial links for {{selectedHero.title}}</div>
-          <div class="{{pocBodyClass}}" *ngIf="selectedHero">POC Links for {{selectedHero.title}}</div>
+          <div class="{{overviewBodyClass}}" *ngIf="selectedHero" [innerHTML]="selectedHero.overview"></div>
+          <div class="{{tutorialBodyClass}}" *ngIf="selectedHero" [innerHTML]="selectedHero.setup"></div>
+          <div class="{{pocBodyClass}}" *ngIf="selectedHero" [innerHTML]="selectedHero.tutorial"></div>
         </div>
       </div>
     </div>

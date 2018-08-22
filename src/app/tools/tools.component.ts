@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../todo-data.service';
+import { Router } from '@angular/router';
 import { Todo } from '../todo';
 
 @Component({
@@ -12,28 +13,42 @@ export class ToolsComponent implements OnInit {
 
   todos: Todo[] = [];
 
-  addNewTool = {};
+  addNewTool = <any>{};
   categoryArr: any;
   typeArr: any;
   emptyError: string;
-
-
+  typeError: string;
+  categoryError: string;
   typeArray = [];
   categoryArray = [];
+  isLoggedIn = false;
+  confirmationMessage: string;
+  added: boolean;
+  showLoader: boolean;
 
-
-  constructor(private todoDataService: TodoDataService) {
+  constructor(private todoDataService: TodoDataService, private router: Router) {
   }
 
   public ngOnInit() {
-    this.todoDataService
-      .getAllTodos()
-      .subscribe(
-        (todos) => {
-          this.todos = todos;
-          this.categoryArr = this.getUniqueCategories(todos);
-          this.typeArr = this.getUniqueTypes(todos);
-        });
+    const currentUser = JSON.parse(sessionStorage.getItem('userLogin'));
+    if (currentUser !== null) {
+      const token = currentUser.token;
+      this.isLoggedIn = token;
+      if (this.isLoggedIn) {
+        this.todoDataService
+          .getAllTodos()
+          .subscribe(
+            (todos) => {
+              this.todos = todos;
+              this.categoryArr = this.getUniqueCategories(todos);
+              this.typeArr = this.getUniqueTypes(todos);
+            });
+      } else {
+        this.router.navigate(['index']);
+      }
+    } else {
+      this.router.navigate(['index']);
+    }
   }
 
   getUniqueCategories(todos): any {
@@ -81,31 +96,47 @@ export class ToolsComponent implements OnInit {
   }
 
   onTypeChange(value, id) {
-    console.log(value, id);
     this.addNewTool = Object.assign(this.addNewTool, { typeValue: value, typeId: id });
-    console.log(this.addNewTool);
+    this.typeError = '';
+    this.confirmationMessage = '';
 
   }
 
   onCategoryChange(value, id) {
     this.addNewTool = Object.assign(this.addNewTool, { categoryValue: value, categoryId: id });
+    this.categoryError = '';
+    this.confirmationMessage = '';
+    this.added = false;
   }
 
   onKey(value) {
     this.addNewTool = Object.assign(this.addNewTool, { title: value, 'complete': false });
     this.emptyError = '';
+    this.confirmationMessage = '';
+    this.added = false;
   }
 
   onSubmit(value) {
-    if (value && value.trim() !== '') {
+    if (!('typeId' in this.addNewTool) || this.addNewTool.typeId === '') {
+      this.typeError = 'Please select tool type';
+    } else if (!('categoryId' in this.addNewTool) || this.addNewTool.categoryId === '') {
+      this.categoryError = 'Please select tool category';
+    } else if (value && value.trim() !== '') {
       this.todoDataService
         .addTodo(this.addNewTool)
         .subscribe(
           (newTodo) => {
-            console.log(newTodo);
+            this.showLoader = true;
+            setTimeout(() => {
+              this.showLoader = false;
+              this.confirmationMessage = 'Tool Added Successfully';
+              this.added = true;
+            }, 1000);
           });
     } else {
       this.emptyError = 'Please fill in the name';
+      this.confirmationMessage = '';
+      this.added = false;
     }
   }
 
